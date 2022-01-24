@@ -4,9 +4,11 @@
     <listeners>
         <listener class-name="core.reporting.ReportListener"></listener>
     </listeners>
-    <test name="wallbox" >
+    <test name="Wallbox CRUD Tests" >
         <classes>
-            <class name="Test1"/>
+            <class name="CreateChargerTests"/>
+            <class name="UpdateChargerTests"/>
+            <class name="DeleteChargerTests"></class>
         </classes>
     </test>
 </suite>
