@@ -1,5 +1,7 @@
 package core.model;
 
+import java.util.Objects;
+
 public class Charger {
 
     private String _id;
@@ -75,5 +77,13 @@ public class Charger {
 
     public void setStatusCode(int statusCode) {
         this.statusCode = statusCode;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Charger charger = (Charger) o;
+        return enabled == charger.enabled && statusCode == charger.statusCode && _id.equals(charger._id) && serialNumber.equals(charger.serialNumber) && model.equals(charger.model) && stationId.equals(charger.stationId);
     }
 }
