@@ -12,7 +12,7 @@ public class BaseAPITest {
     public BaseAPITest() {
         //URI could be consumed from environment variable or properties file
         //The ID could be consumed from environment variable or properties file (see Notes section in README.md)
-        APIConfig.setUrl("https://crudcrud.com/api/7593ef7822184f0aaf0c84aa906ae2f7");
+        APIConfig.setUrl("https://crudcrud.com/api/35e8ea87ffee41bf99f316d43e5177ad");
     }
 
     public Response createPreconditions(Request request) {

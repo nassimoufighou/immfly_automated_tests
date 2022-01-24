@@ -72,13 +72,13 @@ in the following path:
 ````
 java.lang.IllegalStateException: Cannot parse object because no supported Content-Type was specified in response. Content-Type was 'text/plain; charset=utf-8'.
 ````
-When this message appears, the ID in the url needs to be change (just open a new browser windows and you'll get a new ID).
+When this message appears, usually it's because the maximum request number have been reached, so the ID in the url needs to be change: you use another browser or incognito mode and you'll get a new ID.
 You can edit it in the <code>APIConfig.setUrl()</code> method in the <code>core.BaseAPITest</code> class.
 
-As an improvement, and a cleaner solution, the URL ID could be stored in an environmnet variable, read it from the code and append to the URL.
-Doing this, the code is totally agnostic to this issue, so no code editing would be necessary if the ID had to be changed.
-For simplicity, and to avoid creating environment variables in our local environments, this idea has not been applied to this project. 
-It's a little bit overkilling for such small project :)
+As an improvement, and a cleaner solution, the mentioned ID could be stored in an environment variable, read it from the code and append to the URL.
+Doing so, the code is totally agnostic to this issue, so no code editing would be necessary if the ID had to be changed.
+For simplicity, and to avoid creating environment variables in our local environments, this idea has not been implemented in this project. 
+It's little overkill for such small project :)
 <!-- LICENSE -->
 ## License
 
