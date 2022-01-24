@@ -60,7 +60,7 @@ By default, the report a called <code>emailable-report.html</code> it's generate
 _For more information, please refer to the [Maven Surfire Plugin Documentation](https://maven.apache.org/surefire/maven-surefire-plugin/)_
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- LICENSE -->
+<!-- NOTES -->
 ## Notes
 Some [Github Actions](https://github.com/features/actions) have been setted up to ensure the good health of the project. You can find the corresponding <code>compile-install-tests.yml</code>
 in the following path:
@@ -68,14 +68,17 @@ in the following path:
 /wallbox/.github/workflows
    ```
 
-<!-- NOTES -->
-## Notes
 [Crudcrud](https://crudcrud.com/) free version it is limited to 100 request calls. For this reason, the tests may fail with the error message:
 ````
 java.lang.IllegalStateException: Cannot parse object because no supported Content-Type was specified in response. Content-Type was 'text/plain; charset=utf-8'.
 ````
 When this message appears, the ID in the url needs to be change (just open a new browser windows and you'll get a new ID).
 You can edit it in the <code>APIConfig.setUrl()</code> method in the <code>core.BaseAPITest</code> class.
+
+As an improvement, and a cleaner solution, the URL ID could be stored in an environmnet variable, read it from the code and append to the URL.
+Doing this, the code is totally agnostic to this issue, so no code editing would be necessary if the ID had to be changed.
+For simplicity, and to avoid creating environment variables in our local environments, this idea has not been applied to this project. 
+It's a little bit overkilling for such small project :)
 <!-- LICENSE -->
 ## License
 

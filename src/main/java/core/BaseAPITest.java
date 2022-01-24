@@ -1,7 +1,6 @@
 package core;
 
 import core.config.APIConfig;
-import core.config.TestSuiteConfig;
 import core.request.Request;
 import io.restassured.response.Response;
 
@@ -11,11 +10,9 @@ import io.restassured.response.Response;
 public class BaseAPITest {
 
     public BaseAPITest() {
-        //Both user and URI could be consumed from environment variable or properties file
-        APIConfig.setUrl("https://crudcrud.com/api/bc87cd424cef4a338a08b7e368413c74");
-
-        //Report path could be consumed from environment variable or properties file
-        TestSuiteConfig.setPathReport("./reports/report.html");
+        //URI could be consumed from environment variable or properties file
+        //The ID could be consumed from environment variable or properties file (see Notes section in README.md)
+        APIConfig.setUrl("https://crudcrud.com/api/7593ef7822184f0aaf0c84aa906ae2f7");
     }
 
     public Response createPreconditions(Request request) {
