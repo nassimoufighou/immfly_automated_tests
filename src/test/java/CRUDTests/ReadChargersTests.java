@@ -119,8 +119,8 @@ public class ReadChargersTests extends BaseAPITest {
      * THEN the response code is 405 (method not allowed)
      */
     @Test
-    public void existingChargerAreNotReadWithWronHttpMethodTest(){
-        GetAllChargersRequest getAllChargerRequest = GetAllChargersRequest.createCorrectGetAllChargersRequest();
+    public void existingChargerAreNotReadWithWrongHttpMethodTest(){
+        GetAllChargersRequest getAllChargerRequest = GetAllChargersRequest.createGetAllChargersRequestWithWrongHttpMethod();
         Response response = RequestExecutor.execute(getAllChargerRequest);
 
         Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_METHOD_NOT_ALLOWED);

@@ -16,6 +16,6 @@ public class GetChargerRequest extends Request {
     }
 
     public static GetChargerRequest createGetChargerRequestWithWrongHttpMethod(Charger charger){
-        return new GetChargerRequest(charger, HttpMethod.DELETE, CHARGER_ENDPOINT);
+        return new GetChargerRequest(charger, HttpMethod.POST, CHARGER_ENDPOINT);
     }
 }

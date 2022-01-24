@@ -13,4 +13,8 @@ public class GetAllChargersRequest extends Request {
     public static GetAllChargersRequest createCorrectGetAllChargersRequest(){
         return new GetAllChargersRequest(HttpMethod.GET, CHARGER_ENDPOINT);
     }
+
+    public static GetAllChargersRequest createGetAllChargersRequestWithWrongHttpMethod(){
+        return new GetAllChargersRequest(HttpMethod.DELETE, CHARGER_ENDPOINT);
+    }
 }
