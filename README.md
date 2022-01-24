@@ -59,7 +59,7 @@ By default, the report is called <code>report.html</code> and it's generated in:
    ```js
 /europcar/reports/
    ```
-You can configure the path were the report will be generated. To do so, call the method <code>TestSuiteConfig.setPathReport()</code> in the <code>BaseAPITest</code> class (don't forget to include the filename in the path!).
+You can configure the path were the report will be generated. To do so, call the method <code>TestSuiteConfig.setPathReport()</code> in the <code>core.BaseAPITest</code> class (don't forget to include the filename in the path!).
 
 _For more information, please refer to the [Maven Surfire Plugin Documentation](https://maven.apache.org/surefire/maven-surefire-plugin/)_
 <p align="right">(<a href="#top">back to top</a>)</p>
