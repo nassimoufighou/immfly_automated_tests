@@ -33,8 +33,4 @@ public class CreateChargerRequest extends Request {
     public static CreateChargerRequest createChargerWithWrongHttpMethod(Charger charger) {
         return new CreateChargerRequest(charger, HttpMethod.PUT, CHARGER_ENDPOINT);
     }
-
-    public static CreateChargerRequest createChargerWithWrongEndpoint(Charger charger) {
-        return new CreateChargerRequest(charger, HttpMethod.POST, "CHARGER_ENDPOINT");
-    }
 }

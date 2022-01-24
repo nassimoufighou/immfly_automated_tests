@@ -2,7 +2,7 @@ package core.request;
 public abstract class Request {
 
     protected HttpMethod method;
-    protected String body;
+    protected String body = "";
     protected String endpoint;
     protected String authorizationToken;
 

@@ -24,10 +24,10 @@ public class RequestExecutor {
                 response = requestSpecification.when().get(request.getEndpoint()).then().extract().response();
                 break;
             case POST:
-                response = requestSpecification.body(request.getBody().toString()).when().post(request.getEndpoint()).then().extract().response();
+                response = requestSpecification.body(request.getBody()).when().post(request.getEndpoint()).then().extract().response();
                 break;
             case PUT:
-                response = requestSpecification.body(request.getBody().toString()).when().put(request.getEndpoint()).then().extract().response();
+                response = requestSpecification.body(request.getBody()).when().put(request.getEndpoint()).then().extract().response();
                 break;
             case DELETE:
                 response = requestSpecification.when().delete(request.getEndpoint()).then().extract().response();

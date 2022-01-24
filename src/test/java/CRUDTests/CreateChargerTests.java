@@ -86,7 +86,6 @@ public class CreateChargerTests extends BaseAPITest {
      */
     @Test
     public void createChargerTestWithEnEmptyBodyTest() {
-        //TOFIX
         CreateChargerRequest createChargerRequest = CreateChargerRequest.createChargerRequestWithoutBody(preconditionCharger);
         Response response = RequestExecutor.execute(createChargerRequest);
 
