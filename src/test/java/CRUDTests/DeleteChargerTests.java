@@ -1,4 +1,6 @@
+package CRUDTests;
 
+import core.BaseAPITest;
 import core.model.Charger;
 import core.request.CreateChargerRequest;
 import core.request.DeleteChargerRequest;
@@ -13,6 +15,12 @@ public class DeleteChargerTests extends BaseAPITest {
 
     private Charger createdCharger, nonExistingCharger;
 
+    /**
+     * Creates the charger object to be used in the tests.
+     * As this charger object is needed in all the tests, it need to be created before each test method.
+     * For this reason the below method is tagged with the @BeforeMethod.
+     * Otherwise, the below method would need to be tagged with @BeforeClass.
+     */
     @BeforeMethod
     public void setup() {
         Charger preconditionCharger = new Charger("SN123524012022", "MN24012022G", "ST001", true, 200);
@@ -20,7 +28,7 @@ public class DeleteChargerTests extends BaseAPITest {
         nonExistingCharger = new Charger("123", "SN123524012022", "MN24012022G", "ST023", false, 404);
 
         CreateChargerRequest createChargerRequest = CreateChargerRequest.createCorrectChargerRequest(preconditionCharger);
-        Response response = RequestExecutor.execute(createChargerRequest);
+        Response response = createPreconditions(createChargerRequest);
         createdCharger = response.as(Charger.class);
     }
 

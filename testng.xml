@@ -1,14 +1,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="Suite1" verbose="1">
-    <listeners>
-        <listener class-name="core.reporting.ReportListener"></listener>
-    </listeners>
     <test name="Wallbox CRUD Tests" >
         <classes>
-            <class name="CreateChargerTests"/>
-            <class name="UpdateChargerTests"/>
-            <class name="DeleteChargerTests"></class>
+            <class name="CRUDTests.CreateChargerTests"/>
+            <class name="CRUDTests.UpdateChargerTests"/>
+            <class name="CRUDTests.DeleteChargerTests"></class>
+        </classes>
+    </test>
+
+    <test name="Wallbox Integration Tests">
+        <classes>
+            <class name="IntegrationTests.ChargerIntegrationTests"></class>
         </classes>
     </test>
 </suite>
