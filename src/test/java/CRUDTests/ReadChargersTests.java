@@ -83,7 +83,6 @@ public class ReadChargersTests extends BaseAPITest {
      * GIVEN a charger {C} with id {ID} does exis
      * WHEN a non-GET request to the “/charger/{ID}” endpoint with a {C} charger object in the body reques
      * THEN the response code is 405 (method not allowed)
-     *
      */
     @Test
     public void aExistingChargerNotReadWithWrongHttpMethodTest(){
