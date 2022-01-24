@@ -65,7 +65,7 @@ _For more information, please refer to the [Maven Surfire Plugin Documentation](
 Some [Github Actions](https://github.com/features/actions) have been setted up to ensure the good health of the project. You can find the corresponding <code>compile-install-tests.yml</code>
 in the following path:
    ```js
-/europcar/.github/workflows
+/wallbox/.github/workflows
    ```
 
 <!-- NOTES -->
