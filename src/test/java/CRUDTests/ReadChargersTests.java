@@ -13,7 +13,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
-public class ReadChargersTest extends BaseAPITest {
+public class ReadChargersTests extends BaseAPITest {
 
     private Charger preconditionCharger001, preconditionCharger002;
 

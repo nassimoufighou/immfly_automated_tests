@@ -4,7 +4,7 @@
     <test name="Wallbox CRUD Tests" >
         <classes>
             <class name="CRUDTests.CreateChargerTests"/>
-            <class name="CRUDTests.ReadChargersTest"/>
+            <class name="CRUDTests.ReadChargersTests"/>
             <class name="CRUDTests.UpdateChargerTests"/>
             <class name="CRUDTests.DeleteChargerTests"></class>
         </classes>
