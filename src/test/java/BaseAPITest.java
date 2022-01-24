@@ -8,7 +8,7 @@ public class BaseAPITest {
 
     public BaseAPITest() {
         //Both user and URI could be consumed from environment variable or properties file
-        APIConfig.setUrl("https://crudcrud.com/api/7593ef7822184f0aaf0c84aa906ae2f7");
+        APIConfig.setUrl("https://crudcrud.com/api/c7426b14482f4e7c923ab305b964e19e");
 
         //Report path could be consumed from environment variable or properties file
         TestSuiteConfig.setPathReport("./reports/report.html");
