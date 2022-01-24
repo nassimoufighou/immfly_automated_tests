@@ -11,8 +11,6 @@ The project has been built using:
 * [Java](https://www.java.com/)
 * [TestNG](https://testng.org/doc/)
 * [RestAssured](https://rest-assured.io/)
-* [Extent Reports](https://www.extentreports.com/)
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -55,12 +53,10 @@ To run the test, you just need to be in the tests package and use:
    ```js
    mvn test
    ```
-By default, the report is called <code>report.html</code> and it's generated in:
+By default, the report a called <code>emailable-report.html</code> it's generated in:
    ```js
-/europcar/reports/
+/europcar/target/surfire-reports
    ```
-You can configure the path were the report will be generated. To do so, call the method <code>TestSuiteConfig.setPathReport()</code> in the <code>core.BaseAPITest</code> class (don't forget to include the filename in the path!).
-
 _For more information, please refer to the [Maven Surfire Plugin Documentation](https://maven.apache.org/surefire/maven-surefire-plugin/)_
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -72,6 +68,14 @@ in the following path:
 /europcar/.github/workflows
    ```
 
+<!-- NOTES -->
+## Notes
+[Crudcrud](https://crudcrud.com/) free version it is limited to 100 request calls. For this reason, the tests may fail with the error message:
+````
+java.lang.IllegalStateException: Cannot parse object because no supported Content-Type was specified in response. Content-Type was 'text/plain; charset=utf-8'.
+````
+When this message appears, the ID in the url needs to be change (just open a new browser windows and you'll get a new ID).
+You can edit it in the <code>APIConfig.setUrl()</code> method in the <code>core.BaseAPITest</code> class.
 <!-- LICENSE -->
 ## License
 
