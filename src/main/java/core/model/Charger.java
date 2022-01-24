@@ -9,7 +9,17 @@ public class Charger {
     private boolean enabled;
     private int statusCode;
 
-    public Charger() { }
+    public Charger() {
+    }
+
+    public Charger(String _id, String serialNumber, String model, String stationId, boolean enabled, int statusCode) {
+        this._id = _id;
+        this.serialNumber = serialNumber;
+        this.model = model;
+        this.stationId = stationId;
+        this.enabled = enabled;
+        this.statusCode = statusCode;
+    }
 
     public Charger(String serialNumber, String model, String stationId, boolean enabled, int statusCode) {
         this.serialNumber = serialNumber;
@@ -51,12 +61,13 @@ public class Charger {
         this.stationId = stationId;
     }
 
-   public boolean isEnabled() {
-       return enabled;
-   }
-   public void setEnabled(boolean enabled) {
-       this.enabled = enabled;
-   }
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public int getStatusCode() {
         return statusCode;
