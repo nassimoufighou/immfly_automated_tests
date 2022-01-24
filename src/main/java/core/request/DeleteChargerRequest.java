@@ -1,8 +1,6 @@
 package core.request;
 
-import com.aventstack.extentreports.Status;
 import core.model.Charger;
-import core.reporting.Report;
 
 public class DeleteChargerRequest extends Request {
 
@@ -12,7 +10,6 @@ public class DeleteChargerRequest extends Request {
         if (charger == null) this.endpoint = endpoint.concat("/");
         else this.endpoint = endpoint.concat("/").concat(charger.get_id());
         this.method = method;
-        Report.logStepInReport(Status.PASS, "GET request to: " + endpoint);
     }
 
     public static DeleteChargerRequest createCorrectDeleteChargerRequest(Charger charger) {

@@ -17,7 +17,7 @@ public class UpdateChargerRequest extends Request {
             jsonCharger.put("serialNumber", newCharger.getSerialNumber());
             jsonCharger.put("model", newCharger.getModel());
             jsonCharger.put("stationId", newCharger.getStationId());
-            jsonCharger.put("enabled", true);
+            jsonCharger.put("enabled", newCharger.isEnabled());
             jsonCharger.put("statusCode", newCharger.getStatusCode());
             body = jsonCharger.toJSONString();
         }
