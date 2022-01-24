@@ -6,13 +6,13 @@
             <class name="CRUDTests.CreateChargerTests"/>
             <class name="CRUDTests.ReadChargersTests"/>
             <class name="CRUDTests.UpdateChargerTests"/>
-            <class name="CRUDTests.DeleteChargerTests"></class>
+            <class name="CRUDTests.DeleteChargerTests"/>
         </classes>
     </test>
 
     <test name="Wallbox Integration Tests">
         <classes>
-            <class name="IntegrationTests.ChargerIntegrationTests"></class>
+            <class name="IntegrationTests.ChargerIntegrationTests"/>
         </classes>
     </test>
 </suite>

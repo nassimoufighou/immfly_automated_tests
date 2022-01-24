@@ -11,11 +11,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReadChargersTests extends BaseAPITest {
 
     private Charger preconditionCharger001, preconditionCharger002;
+    private List<Charger> preconditionChargers;
 
     /**
      * Creates the charger object to be used in the tests.
@@ -26,15 +28,18 @@ public class ReadChargersTests extends BaseAPITest {
      */
     @BeforeMethod
     public void setup() {
+        preconditionChargers = new ArrayList<>();
         Charger charger001 = new Charger("SN123524012022", "MN24012022G", "ST001", true, 200);
         CreateChargerRequest createChargerRequest = CreateChargerRequest.createCorrectChargerRequest(charger001);
         Response response = createPreconditions(createChargerRequest);
         preconditionCharger001 = response.as(Charger.class);
+        preconditionChargers.add(preconditionCharger001);
 
         Charger charger002 = new Charger("SN144224012022", "MN24012022G", "ST001", true, 200);
         createChargerRequest = CreateChargerRequest.createCorrectChargerRequest(charger002);
         response = createPreconditions(createChargerRequest);
         preconditionCharger002 = response.as(Charger.class);
+        preconditionChargers.add(preconditionCharger002);
     }
 
     /**
@@ -45,13 +50,11 @@ public class ReadChargersTests extends BaseAPITest {
      */
     @AfterMethod
     public void teardown() {
-        if (preconditionCharger001 != null) {
-            DeleteChargerRequest deleteChargerRequest = DeleteChargerRequest.createCorrectDeleteChargerRequest(preconditionCharger001);
-            deletePreconditions(deleteChargerRequest);
-        }
-        if (preconditionCharger002 != null) {
-            DeleteChargerRequest deleteChargerRequest = DeleteChargerRequest.createCorrectDeleteChargerRequest(preconditionCharger002);
-            deletePreconditions(deleteChargerRequest);
+        for (Charger preconditionCharger : preconditionChargers) {
+            if (preconditionCharger != null) {
+                DeleteChargerRequest deleteChargerRequest = DeleteChargerRequest.createCorrectDeleteChargerRequest(preconditionCharger);
+                deletePreconditions(deleteChargerRequest);
+            }
         }
     }
 
@@ -107,9 +110,10 @@ public class ReadChargersTests extends BaseAPITest {
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK);
-        softAssert.assertEquals(chargersFromResponse.size(), 2);
-        softAssert.assertTrue(chargersFromResponse.contains(preconditionCharger001));
-        softAssert.assertTrue(chargersFromResponse.contains(preconditionCharger002));
+        softAssert.assertEquals(chargersFromResponse.size(), preconditionChargers.size());
+        softAssert.assertEquals(chargersFromResponse, preconditionChargers);
+        //softAssert.assertTrue(chargersFromResponse.contains(preconditionCharger001));
+        //softAssert.assertTrue(chargersFromResponse.contains(preconditionCharger002));
         softAssert.assertAll();
     }
 
