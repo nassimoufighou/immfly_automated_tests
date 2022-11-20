@@ -1,3 +1,5 @@
+package steps;
+
 import pages.BritishAirwaysPages;
 
 public class BasePageSteps {

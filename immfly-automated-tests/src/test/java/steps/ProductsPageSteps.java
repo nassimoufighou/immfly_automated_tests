@@ -1,3 +1,5 @@
+package steps;
+
 import domain.Product;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
